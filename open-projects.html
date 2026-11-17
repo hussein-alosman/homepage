@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Open Research Projects | Hussein Al Osman</title>
+<meta name="description" content="Open CSI4900 and CSI6900 student research projects in ECG signal analysis, cardiac imaging, and computational methods for heart rhythm research.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://hussein-alosman.github.io/homepage/open-projects.html">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header container">
+  <div class="header-kicker">Academic homepage · Research</div>
+  <h1>Hussein Al Osman</h1>
+  <p class="affiliation">Professor · University of Ottawa · Ottawa, Canada</p>
+  <nav class="site-nav" aria-label="Primary navigation"><a href="index.html#research">Research</a>
+<a href="publications.html">Publications</a>
+<a href="open-projects.html" aria-current="page">Open projects</a>
+<a href="index.html#data">Data &amp; resources</a>
+<a href="index.html#contact">Contact</a></nav>
+</header>
+<div class="container page-grid">
+  <aside class="sidebar" aria-label="Researcher details">
+  <section><h2>Affiliation</h2><p>University of Ottawa<br>Ottawa, Ontario<br>Canada</p></section>
+  <section><h2>Research group</h2><p>Multimedia Processing and Interaction Group</p></section>
+  <section><h2>Correspondence</h2><p><a href="mailto:hussein.alosman@uottawa.ca">hussein.alosman@uottawa.ca</a></p></section>
+  <section><h2>Academic profiles</h2><ul>
+    <li><a href="https://scholar.google.com/citations?user=OKr85p0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+    <li><a href="https://dblp.org/pid/69/3639.html" target="_blank" rel="noopener noreferrer">DBLP</a></li>
+    <li><a href="https://orcid.org/0000-0002-7189-5644" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+  </ul></section>
+</aside>
+<main id="main" class="projects-main">
+    <div class="project-page-intro">
+      <h2>Heart Rhythm Student Projects</h2>
+      <p class="small-note">CSI6900 / CSI4900</p>
+    </div>
+    <section class="project-contents" aria-labelledby="browse-title">
+<h2 id="browse-title">Browse projects</h2>
+<p class="small-note">Select a project to read the description, learning outcomes, references, and semester-by-semester stages.</p>
+<h3>ECG and cardiac rhythm analysis</h3>
+<ul class="project-index">
+<li><a href="#a1">A1. Finding SVT Episodes in Long ECG Recordings</a> <span>CSI4900 / CSI6900</span></li>
+<li><a href="#a2">A2. Telling SVT Apart from Other Fast Rhythms on a 12-Lead ECG</a> <span>CSI6900</span></li>
+<li><a href="#a3">A3. Finding P-Waves Automatically</a> <span>CSI4900 / CSI6900</span></li>
+<li><a href="#a4">A4. How Well Do Rhythm Detectors Handle Noise?</a> <span>CSI4900 / CSI6900</span></li>
+</ul>
+<h3>Cardiac imaging and VT radiation planning</h3>
+<ul class="project-index">
+<li><a href="#b1">B1. Turning Heart Scar Scans into a Standard &quot;Bull&#x27;s-Eye&quot; Map</a> <span>CSI4900 / CSI6900</span></li>
+<li><a href="#b2">B2. How Much Can We Trust Automatic Heart Wall Outlines?</a> <span>CSI6900</span></li>
+<li><a href="#b3">B3. From Body-Surface ECG to a Map of Heart Activity</a> <span>CSI6900</span></li>
+</ul>
+</section>
+<section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title">Overview</h2>
+<p>These are open projects on fast heart rhythms, for Master's (CSI6900) and Honours (CSI4900) students. They use public data only, so a student can start right away.</p>
+<p>Each project is split into stages. <strong>A student takes on one stage, not the entire multi-stage project.</strong> One stage is one student's work for one 4-month semester. When a student finishes a stage, the next student picks up from where they left off.</p>
+<p>The projects fall into two areas:</p>
+<ul>
+<li><strong>Part A: SVT (supraventricular tachycardia).</strong> A fast rhythm that starts in the upper chambers of the heart. These projects use ECG recordings.</li>
+<li><strong>Part B: VT radiation planning.</strong> VT (ventricular tachycardia) is a fast rhythm that starts in the lower chambers. It can be treated by aiming radiation at the heart tissue that causes it. These projects use public heart scans and body-surface ECG data.</li>
+</ul>
+</section>
+<section id="part-a" aria-labelledby="part-a-title" class="project-group">
+<h2 id="part-a-title">Part A: SVT projects</h2>
+<article class="project" id="a1" aria-labelledby="a1-title">
+<h3 id="a1-title">A1. Finding SVT Episodes in Long ECG Recordings</h3>
+<p>SVT episodes come and go, so they are often missed in short clinic visits and have to be found in long recordings. This project builds a detector that marks where fast upper-chamber rhythms start and stop, and compares a simple rule-based method with a small deep learning model.</p>
+<p><strong>Expected results:</strong> A working episode detector and a fair comparison of the two methods.</p>
+<p><strong>Learning outcomes:</strong> Basic ECG signal processing, working with expert labels, careful testing of detectors.</p>
+<p><strong>Suitability:</strong> CSI6900 or CSI4900.</p>
+<p><strong>References:</strong> <a href="https://doi.org/10.13026/C2V30W">MIT-BIH Supraventricular Arrhythmia Database</a> (78 half-hour ECG recordings). <a href="https://doi.org/10.13026/C2F305">MIT-BIH Arrhythmia Database</a>.</p>
+<p><strong>Stages (one semester each):</strong></p>
+<ol>
+<li><p><strong>Data and simple detector.</strong> Load both databases, check which expert labels support episode start and end times, and build a rule-based detector using heart rate and beat timing. Hand over the data loader, episode labels, scoring script and baseline scores.</p>
+</li>
+<li><p><strong>Learning-based detector.</strong> Train a small deep learning model using the Stage 1 data, and score it with the same Stage 1 script so the comparison is fair. Hand over the trained model and a comparison report.</p>
+</li>
+</ol>
+</article>
+<article class="project" id="a2" aria-labelledby="a2-title">
+<h3 id="a2-title">A2. Telling SVT Apart from Other Fast Rhythms on a 12-Lead ECG</h3>
+<p>A fast heart rate can have several causes, and telling them apart affects treatment. This project trains a classifier on standard 12-lead hospital ECGs and shows which parts of the ECG the model relies on, so a doctor can check its reasoning.</p>
+<p><strong>Expected results:</strong> A fast-rhythm classifier, an analysis of its mistakes, and plots showing what drives each decision.</p>
+<p><strong>Learning outcomes:</strong> Classification with several labels per record, handling rare classes, explaining model decisions.</p>
+<p><strong>Suitability:</strong> CSI6900.</p>
+<p><strong>References:</strong> Wagner et al., <a href="https://doi.org/10.1038/s41597-020-0495-6">PTB-XL: A Large Publicly Available ECG Dataset</a>, Scientific Data, 2020 (21,799 ten-second 12-lead ECGs).</p>
+<p><strong>Stages (one semester each):</strong></p>
+<ol>
+<li><p><strong>Data check and baseline.</strong> Count how many records carry fast-rhythm labels. If there are too few, find and add a second public dataset. Build a basic classifier. Hand over a data report with label counts, a fixed train/test split and baseline results.</p>
+</li>
+<li><p><strong>Better classifier.</strong> Improve the model and deal with rhythms that have far fewer examples than others. Hand over the improved model and results on the same split.</p>
+</li>
+<li><p><strong>Explaining decisions.</strong> Show which parts of the ECG drive each decision, and review a sample of cases with a clinician. Hand over the explanation plots and review notes.</p>
+</li>
+</ol>
+</article>
+<article class="project" id="a3" aria-labelledby="a3-title">
+<h3 id="a3-title">A3. Finding P-Waves Automatically</h3>
+<p>The P-wave is the small bump on the ECG that shows the upper chambers firing. Its shape and timing are key clues for spotting SVT, but it is small and easily hidden by noise. This project builds a P-wave detector and studies where it fails.</p>
+<p><strong>Expected results:</strong> A P-wave detector with accuracy figures and a catalogue of failure cases.</p>
+<p><strong>Learning outcomes:</strong> ECG waveform structure, signal filtering, measuring detection accuracy.</p>
+<p><strong>Suitability:</strong> CSI6900 or CSI4900.</p>
+<p><strong>References:</strong> MIT-BIH P-wave Annotations (PhysioNet), expert P-wave labels for twelve signals from the <a href="https://doi.org/10.13026/C2F305">MIT-BIH Arrhythmia Database</a>.</p>
+<p><strong>Stages (one semester each):</strong></p>
+<ol>
+<li><p><strong>Detector on clean signals.</strong> Build a P-wave detector and test it against the twelve labelled signals. Hand over the detector, scoring script and accuracy results.</p>
+</li>
+<li><p><strong>Failures and improvement.</strong> Catalogue where the detector fails, improve it, and try it on SVT recordings. Hand over the failure catalogue and the improved detector.</p>
+</li>
+</ol>
+</article>
+<article class="project" id="a4" aria-labelledby="a4-title">
+<h3 id="a4-title">A4. How Well Do Rhythm Detectors Handle Noise?</h3>
+<p>Recordings from wearable devices are much noisier than hospital ECGs, and detectors that work well in the lab can fail in daily use. This project measures how existing open-source rhythm detectors hold up as noise increases, and tests ways to make them more robust.</p>
+<p><strong>Expected results:</strong> A test bench showing how accuracy changes with noise level, and at least one tested improvement.</p>
+<p><strong>Learning outcomes:</strong> Robustness testing, experimental design, honest reporting of results.</p>
+<p><strong>Suitability:</strong> CSI6900 or CSI4900.</p>
+<p><strong>References:</strong> MIT-BIH Noise Stress Test Database (PhysioNet), which adds measured amounts of real recording noise to clean MIT-BIH recordings.</p>
+<p><strong>Stages (one semester each):</strong></p>
+<ol>
+<li><p><strong>Test bench.</strong> Collect open-source rhythm detectors and build a test bench that adds noise at increasing levels. Hand over the test bench and results for each detector.</p>
+</li>
+<li><p><strong>Making detectors more robust.</strong> Try simple fixes and measure them on the same test bench. Hand over the fixes and a before-and-after report.</p>
+</li>
+</ol>
+</article>
+</section>
+<section id="part-b" aria-labelledby="part-b-title" class="project-group">
+<h2 id="part-b-title">Part B: VT radiation planning projects</h2>
+<article class="project" id="b1" aria-labelledby="b1-title">
+<h3 id="b1-title">B1. Turning Heart Scar Scans into a Standard "Bull's-Eye" Map</h3>
+<p>To plan radiation for VT, doctors need to see where scar tissue sits in the heart wall. A bull's-eye map flattens the heart wall into a circle, so different patients and scans can be compared side by side. This project builds a pipeline that turns MRI scans with scar outlines into a standard bull's-eye scar map.</p>
+<p><strong>Expected results:</strong> An open pipeline from scan to scar map, checked against expert outlines.</p>
+<p><strong>Learning outcomes:</strong> Medical image formats, the 3D shape of the heart, data visualization.</p>
+<p><strong>Suitability:</strong> CSI6900 or CSI4900.</p>
+<p><strong>References:</strong> Lalande et al., "Deep learning methods for automatic evaluation of delayed enhancement-MRI. The results of the EMIDEC challenge," Medical Image Analysis, vol. 79, 2022, 102428 (150 MRI exams, 50 normal and 100 with heart attack scarring).</p>
+<p><strong>Stages (one semester each):</strong></p>
+<ol>
+<li><p><strong>Heart wall map.</strong> Load the EMIDEC scans, find the long axis of the left ventricle, and build a bull's-eye map of wall thickness from the expert outlines. Hand over the pipeline and sample maps.</p>
+</li>
+<li><p><strong>Add the scar.</strong> Add a scar layer and compute the scar percentage in each heart segment, then check the totals against the expert outlines. Hand over the full pipeline and a validation report.</p>
+</li>
+</ol>
+</article>
+<article class="project" id="b2" aria-labelledby="b2-title">
+<h3 id="b2-title">B2. How Much Can We Trust Automatic Heart Wall Outlines?</h3>
+<p>Radiation planning tools rely on automatic outlines of the heart wall, and any error carries through to the treatment target. This project measures how far automatic outlines are from expert ones, in millimetres, and maps where on the heart wall the errors concentrate.</p>
+<p><strong>Expected results:</strong> An error map of the heart wall showing where automatic outlines are least reliable.</p>
+<p><strong>Learning outcomes:</strong> Measuring segmentation quality (overlap and distance), statistics, fair comparison of tools.</p>
+<p><strong>Suitability:</strong> CSI6900.</p>
+<p><strong>References:</strong> Lalande et al., 2022 (EMIDEC, above). Wasserthal et al., <a href="https://doi.org/10.1148/ryai.230024">TotalSegmentator</a>, Radiology: Artificial Intelligence, 2023.</p>
+<p><strong>Stages (one semester each):</strong></p>
+<ol>
+<li><p><strong>Measure the errors.</strong> Run automatic outlining tools on the EMIDEC scans (first checking that each tool supports MRI) and measure overlap and distance against the expert outlines. Hand over error results for each patient and tool.</p>
+</li>
+<li><p><strong>Map where the errors are.</strong> Place the errors onto bull's-eye maps to show which parts of the heart wall are least reliable. Needs B1 Stage 1 to be finished first. Hand over the error maps and a summary report.</p>
+</li>
+</ol>
+</article>
+<article class="project" id="b3" aria-labelledby="b3-title">
+<h3 id="b3-title">B3. From Body-Surface ECG to a Map of Heart Activity</h3>
+<p>Electrocardiographic imaging uses many electrodes on the chest, together with a body scan, to estimate the electrical activity on the heart surface. It is one of the non-invasive ways to find where VT starts. This project reproduces a standard method on public data and tests how sensitive it is to small errors.</p>
+<p><strong>Expected results:</strong> A reproduced reconstruction pipeline and a sensitivity analysis.</p>
+<p><strong>Learning outcomes:</strong> Inverse problems, numerical methods, working with linked signal and geometry data.</p>
+<p><strong>Suitability:</strong> CSI6900.</p>
+<p><strong>References:</strong> Aras et al., <a href="https://doi.org/10.1016/j.jelectrocard.2015.08.008">Experimental Data and Geometric Analysis Repository – EDGAR</a>, Journal of Electrocardiology, 48(6):975–981, 2015.</p>
+<p><strong>Stages (one semester each):</strong></p>
+<ol>
+<li><p><strong>Explore the data.</strong> Set up an EDGAR account, list which datasets include VT recordings, and load and display the signals and heart geometry. Hand over a dataset list and loading scripts.</p>
+</li>
+<li><p><strong>Rebuild a standard method.</strong> Reproduce a standard reconstruction method and compare its output with measured heart signals where the data has them. Hand over the working reconstruction and the comparison.</p>
+</li>
+<li><p><strong>Sensitivity test.</strong> Measure how much small errors in electrode position change the result. Hand over the sensitivity analysis and report.</p>
+</li>
+</ol>
+</article>
+</section>
+<section id="handoff" aria-labelledby="handoff-title">
+<h2 id="handoff-title">How the handoff works</h2>
+<p>Every stage ends with the same handoff package, so no student starts from zero.</p>
+<ul>
+<li><strong>Code in a shared repository</strong>, with a "Start here" guide explaining how to run everything from scratch.</li>
+<li><strong>A data download script</strong>, not copies of the data, so each student gets the data under its own license.</li>
+<li><strong>A results file</strong> listing the exact settings used, so the numbers can be reproduced.</li>
+<li><strong>A handoff note</strong>: what works, what doesn't, what was tried and dropped, and what the next stage should do first.</li>
+</ul>
+<p>The incoming student's first task is to rerun the previous stage and get the same numbers before changing anything. This catches missing files or steps early.</p>
+</section>
+<section id="order-of-work" aria-labelledby="order-of-work-title">
+<h2 id="order-of-work-title">Order of work</h2>
+<p>There are 16 stages in total. Most projects are independent, so several students can work at the same time on different projects.</p>
+<div class="table-scroll" role="region" tabindex="0" aria-label="Project stage dependency table"><table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Stages</th>
+<th>Can    start when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1. SVT episodes</td>
+<td>2</td>
+<td>Any semester</td>
+</tr>
+<tr>
+<td>A2. Fast rhythms on 12-lead ECG</td>
+<td>3</td>
+<td>Any semester</td>
+</tr>
+<tr>
+<td>A3. P-waves</td>
+<td>2</td>
+<td>Any semester</td>
+</tr>
+<tr>
+<td>A4. Noise</td>
+<td>2</td>
+<td>Any semester (can later also test the A1 detector)</td>
+</tr>
+<tr>
+<td>B1. Bull's-eye scar maps</td>
+<td>2</td>
+<td>Any semester</td>
+</tr>
+<tr>
+<td>B2. Automatic outline errors</td>
+<td>2</td>
+<td>Stage 1 any semester; Stage 2 after B1 Stage 1</td>
+</tr>
+<tr>
+<td>B3. Body-surface ECG to heart maps</td>
+<td>3</td>
+<td>Any semester</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+  </main>
+</div>
+<footer class="page-footer"><div class="container"><span>Hussein Al Osman · Research homepage</span><span>University of Ottawa · Updated November 2026</span></div></footer>
+</body>
+</html>
